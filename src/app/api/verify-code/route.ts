@@ -41,9 +41,7 @@ export async function POST(request:Request) {
             message : "Incorrect Verification code"
         }, { status : 400} )
     }
-
-
-
+    
     try {
         
     } catch (error) {
