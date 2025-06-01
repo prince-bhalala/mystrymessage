@@ -4,7 +4,6 @@ import UserModel from "@/model/User.model";
 import dbConnect from "@/lib/dbConnect";
 import {User} from "next-auth"
 import mongoose from "mongoose";
-import { tr } from "zod/v4/locales";
 
 export async function GET(request : Request) {
     
