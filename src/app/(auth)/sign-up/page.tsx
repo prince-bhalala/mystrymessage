@@ -16,7 +16,7 @@ import { Input } from '@/components/ui/input'
 import {Loader2} from 'lucide-react'
 
 
-function page() {
+export default function Signup() {
 
     const [username,setUsername] = useState('')
     const [usernameMessage,setUsernameMessage] = useState('')
