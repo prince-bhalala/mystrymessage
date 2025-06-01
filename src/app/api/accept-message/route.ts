@@ -83,7 +83,7 @@ export async function GET(request : Request) {
         
         return Response.json({
                 success : true,
-                isAcceptingMessages : foundUser.isAcceptingMessage
+                isAcceptingMessage : foundUser.isAcceptingMessage
             }, {status : 200})
     } catch (error) {
         console.log("Error in getting messages accptance status")
