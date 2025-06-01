@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import AuthProvider from '@/context/authProviders';
+import {Toaster} from '@/components/ui/sonner'
 import Navbar from '@/components/navbar';
 
 
@@ -18,12 +20,13 @@ interface RootLayoutProps {
 export default  function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" >
-      
+      <AuthProvider>
         <body className={inter.className}>
           <Navbar/>
           {children}
+          <Toaster/>
         </body>
-      
+      </AuthProvider>
     </html>
   );
 }
