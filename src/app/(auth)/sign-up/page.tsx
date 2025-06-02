@@ -44,8 +44,7 @@ export default function Signup() {
 
           try {
             
-            const response =  await axios.get(`/api/check-username-unique?username
-              =${debuncedUsername}`)
+            const response =  await axios.get(`/api/check-username-unique?username=${debuncedUsername}`)
             setUsernameMessage(response.data.message)
 
 
@@ -102,7 +101,7 @@ export default function Signup() {
                   <Input
                     {...field}
                     onChange={(e) => {
-                      field.onChange(e);
+                      field.onChange(e.target.value);
                       setUsername(e.target.value);
                     }}
                   />
