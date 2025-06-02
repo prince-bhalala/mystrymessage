@@ -1,7 +1,7 @@
 'use client'
 import MessageCard from '@/components/MessageCard'
 import { Button } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
+import { Separator } from '@/components/ui/separator' 
 import { Switch } from '@/components/ui/switch'
 import { Message } from '@/model/User.model'
 import { acceptMessageSchema } from '@/Schemas/acceptMessageSchema'
