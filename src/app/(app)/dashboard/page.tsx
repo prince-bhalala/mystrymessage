@@ -22,7 +22,7 @@ const dashboard = () => {
   const [isSwitchLoading,setIsisSwitchLoading] = useState(false)
 
   const handleDeleteMessage = (messageId:string) => {
-    setMessages(messages.filter( (message) => {message.id !== messageId}))
+    setMessages(messages.filter( (message) => {message._id !== messageId}))
   }
 
   const {data : session} = useSession()
@@ -56,7 +56,7 @@ const dashboard = () => {
       const response = await axios.get<ApiResponse>('/api/get-message')
       setMessages(response.data.messages || [])
       if (refresh) {
-        toast("Showinf latest messages")
+        toast("Showing latest messages")
       }
     } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>
@@ -78,7 +78,7 @@ const dashboard = () => {
   const handleSwitchChange = async () => {
     try {
       const response = await axios.post<ApiResponse>('/api/accept-message',{
-        acceptMessages : !acceptMessages
+        acceptMessage : !acceptMessages
       })
       setValue('acceptMessage',!acceptMessages)
       toast(response.data.message)
@@ -88,6 +88,9 @@ const dashboard = () => {
     }
   }
 
+  if (!session || !session.user) {
+    return <div>Please Login</div>
+  }
   const {username}  = session?.user as User
   const baseUrl = `${window.location.protocol}//${window.location.host}`
   const profileUrl = `${baseUrl}/u/${username}`
@@ -97,9 +100,6 @@ const dashboard = () => {
     toast('Profile URL has been copied to clipboard')
   }
 
-  if (!session || !session.user) {
-    return <div>Please Login</div>
-  }
 
 
   return (

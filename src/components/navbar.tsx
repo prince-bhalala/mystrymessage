@@ -20,7 +20,13 @@ const navbar = () => {
             session ? (
                 <>
                     <span className='mr-4'>Welcome, {user?.username || user?.email}</span>
-                    <Button className='w-full md:w-auto' onClick = { () => signOut()}>Logout</Button>
+                    <Button
+                        onClick={() => signOut()}
+                        className="w-full md:w-auto px-6 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white transition duration-200"
+                      >
+                        Logout
+                    </Button>
+
                 </>
             ) : (
                 <Link href='/sign-in'>

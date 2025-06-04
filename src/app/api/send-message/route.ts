@@ -1,7 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/User.model";
 import { Message } from "@/model/User.model";
-import { use } from "react";
 
 export async function POST(request : Request) {
     
@@ -24,7 +23,7 @@ export async function POST(request : Request) {
         
         return Response.json({
             success : false,
-            message : "User is Not Acccepting Message "
+            message : "User is Not Acccepting Message"
         }, {status : 403})
       }
 

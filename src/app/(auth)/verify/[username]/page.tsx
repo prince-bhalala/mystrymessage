@@ -39,7 +39,7 @@ function VerifyAccount() {
             const axiosError = error as AxiosError<ApiResponse> 
             toast(axiosError.response?.data.message)
         }
-    }
+    } 
 
   return (
      <div className="flex justify-center items-center min-h-screen bg-gray-800">
