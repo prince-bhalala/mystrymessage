@@ -1,5 +1,4 @@
 import mongoose,{Schema , Document} from "mongoose";
-import { string } from "zod/v4";
 
 export interface Message extends Document{
     _id : string 

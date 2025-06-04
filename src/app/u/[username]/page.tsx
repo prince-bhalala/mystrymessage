@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { ApiResponse } from '@/types/ApiResponsa'
+import { ApiResponse } from '@/types/Apiresponse'
 import { useParams } from 'next/navigation'
 import axios, { AxiosError } from 'axios'
 import { useForm } from 'react-hook-form'
