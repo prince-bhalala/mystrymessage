@@ -81,7 +81,7 @@ const UserMessagePage = () => {
                     {...field}
                   />
                 </FormControl>
-                {userMessage && (
+                {!userMessage && (
                   <p
                     className={`text-sm mt-2 ${
                       isAcceptingMessage ? 'text-green-500' : 'text-red-500'
