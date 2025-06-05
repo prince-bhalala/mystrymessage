@@ -3,6 +3,7 @@ import {z} from "zod";
 import UserModel from "@/model/User.model";
 
 export async function POST(request:Request) {
+    try {
     
     await dbConnect()
 
@@ -42,7 +43,6 @@ export async function POST(request:Request) {
         }, { status : 400} )
     }
     
-    try {
         
     } catch (error) {
         console.error("Error verifying",error)
